@@ -1,0 +1,179 @@
+.card-container{
+    width: 19rem/* 288px */;
+}
+
+.listofblog-name{
+    font-weight: 600;
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
+    margin-top: 0.5rem/* 8px */;
+    margin-bottom: 0px;
+    margin-left: 0.8rem/* 4px */;
+}
+
+.cardlist{
+    height:79.9vh;
+    overflow-y: scroll;
+
+}
+
+.card{
+    margin-left: 0.75rem/* 12px */;
+    margin-top: 1rem/* 16px */;
+    margin-bottom: 1rem/* 16px */;
+    padding: 0.625rem/* 10px */;
+    width: 17.5rem/* 256px */;
+    border-radius: 0.375rem/* 6px */;
+    background: #FFFFFF;
+    border: 1px solid #AFB0B6;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}
+.card-green{
+    border: 2px solid rgba(58, 3, 46, 1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    margin-left: 0.75rem/* 12px */;
+    margin-top: 1rem/* 16px */;
+    margin-bottom: 1rem/* 16px */;
+    padding: 0.625rem/* 10px */;
+    width: 17.5rem/* 256px */;
+    border-radius: 0.375rem/* 6px */;
+}
+
+.card-title{
+    font-size: 1.125rem/* 18px */;
+    line-height: 1.75rem/* 28px */;
+    font-weight: 500;
+    color: rgba(17, 27, 43, 1);
+    font-family: Sarabun, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-desc{
+    color: rgba(17, 27, 43, 1);
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
+    font-weight: 400;
+    font-family: 'Sarabun', sans-serif;
+    height: 4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-image-label{
+    display: flex;
+    align-items: center;
+    margin-left: -4px;
+    margin-top: 0.25rem/* 4px */;
+}
+
+.card-image{
+    height: 2.5rem/* 40px */;
+    width: 2.5rem/* 40px */;
+}
+
+.card-label{
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
+    font-weight: 500;
+    font-family: 'Sarabun', sans-serif;
+    color: black;
+}
+
+.card-date{
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
+    font-weight: 500;
+    font-family: 'Sarabun', sans-serif;
+    text-align: right;
+    margin-top: -14px;
+    color: black;
+}
+
+.listandsort-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort-button{
+    margin-top: 0.5rem/* 8px */;
+    margin-right: 1.2rem/* 16px */;
+    display: flex;
+    align-items: center;
+    border:none;
+    background: none;
+}
+
+.sort-text{
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 2px;
+}
+
+.sort-icon{
+    height: 0.75rem/* 12px */;
+}
+
+.sortdrop-container{
+    position: absolute;
+    border-radius: 0.375rem/* 6px */;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    left: 15rem/* 240px */;
+    background: #F8F8F8;
+    /* Shadow/Default */
+
+    box-shadow: 0px 0px 0px 1px rgba(25, 37, 50, 0.1), 0px 3px 7px -3px rgba(25, 37, 50, 0.1), 0px 6px 12px -2px rgba(25, 37, 50, 0.1);
+    border-radius: 5px;
+}
+
+.sortlist{
+    font-weight: 400;
+    font-size: 14px;
+    padding: 8px;
+    background: rgba(248, 248, 248, 1);
+}
+
+.dotandlabel{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.dot{
+    height: 0.5rem/* 8px */;
+    width: 0.5rem/* 8px */;  
+    border-radius: 9999px;
+    margin-right: 0.25rem/* 4px */;
+    background-color: rgba(0, 108, 186, 1);
+}
+
+.undot{
+    height: 0.5rem/* 8px */;
+    width: 0.5rem/* 8px */;  
+    border-radius: 9999px;
+    margin-right: 0.25rem/* 4px */;
+}
+
+.thumb-short{
+    display: flex;
+}
+
+.thumb-img{
+    width: 70px;
+    height: 70px;
+    margin-right: 5px;
+}
+
+.title-tag{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tagname{
+    color: #A74C93;
+    font-family: Sarabun, sans-serif;
+}

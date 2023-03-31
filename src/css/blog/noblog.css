@@ -1,0 +1,19 @@
+.initial-img{
+    height: 100%;
+    width: 1175px;            
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.initial-img-prop{
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.init-text{
+    color: rgba(112, 112, 112, 1);
+    font-size: 25px;
+    font-family: 'Sarabun', sans-serif;
+}

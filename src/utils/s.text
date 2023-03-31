@@ -1,0 +1,51 @@
+ case "checkbox":
+          return <Checkbox label={fieldData.label} name={fieldData.Name} />;
+      case "tickbox":
+          return <Tickbox label={fieldData.label} name={fieldData.Name} />;
+      
+ const Tickbox = ({ label, name }) => {
+    const [ticked, setTicked] = useState(false);
+  
+    const handleChange = (event) => {
+      setTicked(!ticked);
+    };
+  
+    return (
+      <div className="form-group">
+        <label htmlFor={name}>
+          <input
+            type="checkbox"
+            id={name}
+            name={name}
+            checked={ticked}
+            onChange={handleChange}
+          />
+          {label}
+        </label>
+      </div>
+    );
+  };
+  
+  const Checkbox = ({ label, name }) => {
+    const [checked, setChecked] = useState(false);
+  
+    const handleChange = (event) => {
+      setChecked(event.target.checked);
+    };
+  
+    return (
+      <div className="form-group content-center justify-center">
+        <label htmlFor={name} className=' hover:text-cyan-600  text-slate-300 font-semibold'>
+          <input
+            type="checkbox"
+            id={name}
+            name={name}
+            checked={checked}
+            onChange={handleChange}
+            className='m-3'
+          />
+          {label}
+        </label>
+      </div>
+    );
+  };

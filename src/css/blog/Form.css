@@ -1,0 +1,43 @@
+.button-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.draft-save{
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelbutton{
+    margin-top: 0.25rem/* 4px */;
+    margin-right: 14px;
+    width: 5rem/* 80px */;
+    height: 2rem/* 32px */;
+    border-radius: 8px;
+    border: none;
+    align-content: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Sarabun', sans-serif;
+    background-color: rgba(246, 244, 246, 1) !important;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.submitbutton{
+    margin-top: 0.25rem/* 4px */;
+    width: 5rem/* 80px */;
+    height: 2rem/* 32px */;
+    border-radius: 8px;
+    border: none;
+    align-content: center;
+    justify-content: center;
+    font-size: 16x;
+    font-weight: 400;
+    color: white;
+    font-family: 'Sarabun', sans-serif;
+    background-color:rgba(58, 3, 46, 1) !important;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25) !important;
+}

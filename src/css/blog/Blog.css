@@ -1,0 +1,16 @@
+.content{
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.create-button-title{
+    color: white;
+    font-weight: 400;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 14px/* 16px */;
+}
+
+.create-button-icon{
+    height: 1.25rem/* 20px */;
+    margin-left: 10px;
+}

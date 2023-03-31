@@ -1,0 +1,4 @@
+{
+    "api":"http://localhost:3001/",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkZGEzMWMzLTRiMTctNDljOC05MTE0LTMyMzBmZDM3OTJiYiIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODAyODIwMDUsImV4cCI6MTY4MDM2ODQwNX0.jin3RGfNadfR2Uu0hMTYXnA8ltJzjcAF0Itg4erghNg"
+}
