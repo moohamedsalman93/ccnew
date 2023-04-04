@@ -17,6 +17,7 @@ function Card({ post, onPostClick }) {
   const thumbnailUrl = api+rootStoragePath + post.thumbnail;
   const navigate = useNavigate();
   const { id } = useParams();
+  
   const handlePostClick = () => {
     navigate(`/Blog/${post.id}`);
   }
@@ -67,13 +68,30 @@ function CardList({ query }) {
         SetsData([]);
       }
     };
-    fetchData();
-  }, []);
+
+    const searchData = async () => {
+      try {
+        const res = await axios.get(api + `blog/search/?q=${query}`
+        , {
+          headers: {
+            'Authorization': `bearer ${accessToken}`
+          }
+        });
+        SetsData(res.data.data);
+      } catch (err) {
+        console.log(err);
+        SetsData([]);
+      }
+    };
 
 
-  useEffect(() => {
-    console.log(sData);
+    if(query == ''){fetchData();
+    }
+    else{
+      searchData();
+    }
   }, [sData]);
+
 
   const handleclick = () => {
     setOpen(!isOpen);

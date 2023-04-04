@@ -51,6 +51,10 @@ function BlogPost() {
           </button>
         </div>
       }
+      <div className="tag-con">
+        <label>Tags:</label>
+        <label className='Blog-post-tag'>{sData.tagName}</label>
+      </div>
       <div className='Blog-post-content'>
         {sData && sData.content &&
           <div dangerouslySetInnerHTML={{ __html: sData.content }} />

@@ -10,7 +10,7 @@ function ShortDescBox({value,handleChange}) {
               placeholder='Short Description'
               name='ShortDescription'
               value={value}
-              onChange={handleChange}
+              onChange={event => handleChange(event.target.value)} maxLength={50}
             />
     </div>
   )

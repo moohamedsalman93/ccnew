@@ -8,13 +8,13 @@
 
 .contbutton{
     display: flex;
-    width: 133px;
-    height: 33px;
+    width: 139px;
+    height: 39px;
     padding-top:5px ;
     padding-bottom: 5px ;
     margin-top:  8px ;
     margin-bottom: 8px ;
-    border-radius: 7px;
+    border-radius: 10px;
     align-items: center;
     justify-content: center;
     background-color: rgb(61, 4, 48);

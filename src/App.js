@@ -10,6 +10,7 @@ import SideBar from './components/SideBar';
 import Blog from './pages/Blog';
 import Pages from './pages/Pages';
 import Storage from './pages/Storage';
+import Draft from './components/blog/Draft';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="Blog" element={<Blog/>}>
                 <Route path='' element={<SecnoBlog/>}/>
                 <Route path="newblog" element={< NewBlog/>} />
+                <Route path="draft" element={<Draft/>} />
                 <Route path=":id" element={<BlogPost />} />
                 <Route path=":id/EditBlog" element={<EditBlog />} />
               </Route>

@@ -1,51 +1,121 @@
- case "checkbox":
-          return <Checkbox label={fieldData.label} name={fieldData.Name} />;
-      case "tickbox":
-          return <Tickbox label={fieldData.label} name={fieldData.Name} />;
-      
- const Tickbox = ({ label, name }) => {
-    const [ticked, setTicked] = useState(false);
-  
-    const handleChange = (event) => {
-      setTicked(!ticked);
-    };
-  
-    return (
-      <div className="form-group">
-        <label htmlFor={name}>
-          <input
-            type="checkbox"
-            id={name}
-            name={name}
-            checked={ticked}
-            onChange={handleChange}
-          />
-          {label}
-        </label>
-      </div>
-    );
+ const primaryColor = 'rgba(58, 3, 46, 1)';
+  const secondaryColor = 'rgba(58, 3, 46,0.2)';
+  const colorStyles = {
+    control: (styles, { isFocused }) => ({
+      ...styles,
+      boxShadow: "none",
+      color: "black",
+      borderColor: isFocused ? primaryColor : "rgba(105, 102, 102, 1)",
+      "&:hover": {
+        borderColor: isFocused ? primaryColor : "rgba(105, 102, 102, 1)"
+      },
+    }),
+
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        backgroundColor: isSelected ? primaryColor : null,
+        color: isSelected ? "white" : null, // add this line
+        ":hover": {
+          backgroundColor: isFocused ? secondaryColor : null,
+
+        },
+      };
+    },
   };
-  
-  const Checkbox = ({ label, name }) => {
-    const [checked, setChecked] = useState(false);
-  
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
-    };
-  
-    return (
-      <div className="form-group content-center justify-center">
-        <label htmlFor={name} className=' hover:text-cyan-600  text-slate-300 font-semibold'>
-          <input
-            type="checkbox"
-            id={name}
-            name={name}
-            checked={checked}
-            onChange={handleChange}
-            className='m-3'
-          />
-          {label}
-        </label>
-      </div>
-    );
+
+   styles={colorStyles}
+
+
+
+
+
+
+
+import { useState, useEffect } from "react";
+import CreatableSelect from "react-select/creatable";
+import axios from "axios";
+
+const apiConfig = require('../../../Data/Api.json');
+const api = apiConfig.api;
+const accessToken = apiConfig.token;
+
+const CatDropdown = ({valued,setvalued}) => {
+   const [selectedValue, setSelectedValue] = useState(null);
+   const [options, setOptions] = useState([]);
+
+  // const createTag = async (tag) => {
+  //   try {
+  //     const response = await axios.post(api + "blog/tag/", {
+  //       name: tag,
+  //     },
+  //       {
+  //         headers: {
+  //           'Authorization': `bearer ${accessToken}`
+  //         }
+  //       }
+  //     );
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // async function fetchTags(q) {
+  //   console.log(`${q} 2nd`);
+  //   try {
+  //     const response = await axios.get(`${api}blog/tag/?name=${q}`, {
+  //       headers: {
+  //         'Authorization': `bearer ${accessToken}`
+  //       }
+  //     });
+  //     if (response.data) {
+  //       console.log(response.data);
+
+  //       if (response.data.status === 'success') {
+  //         const tags = response.data.data.map(tag => ({ value: tag.name, label: tag.name }));
+  //         setOptions(tags);
+
+  //       }
+
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // // Update the selected value whenever the valued prop changes
+  // useEffect(() => {
+  //   setSelectedValue(valued ? { value: valued, label: valued } : null);
+  // }, [valued]);
+
+  const handleChange = (selectedOption, actionMeta) => {
+    // if (actionMeta.action === "create-option") {
+    //   createTag(selectedOption.value);
+    // }
+    // setSelectedValue(selectedOption);
+    // setvalued(selectedOption.value);
   };
+
+  // function handleInputChange(inputValue) {
+  //   console.log(`${inputValue} 1st`); // log the current input value to the console
+  //   // do other things with the input value
+  //   fetchTags(inputValue)
+  // }
+  return (
+    
+    
+    <CreatableSelect
+      options={options}
+      value={valued}
+      //onInputChange={handleInputChange}
+      onChange={handleChange}
+      placeholder="Select or create a tag"
+      isClearable={true}
+      isSearchable={true}
+    />
+    
+  );
+};
+
+export default CatDropdown;

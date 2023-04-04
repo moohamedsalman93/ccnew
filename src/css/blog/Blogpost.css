@@ -50,3 +50,19 @@
     width: 25px;
     height: 25px;
 }
+
+.tag-con{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.Blog-post-tag{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+    background-color: lavender;
+    border-radius: 10px;
+}

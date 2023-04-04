@@ -2,19 +2,17 @@
     display: flex;
     margin: 0.25rem/* 4px */;
     align-items: center;
-   
+   margin-top: 10px;
     padding: 2px;
     background: #FFFFFF;
-    border: 1px solid #696666;
-    /* Inner Shadow/Default */
-    
-    box-shadow: inset 0px 2px 0px rgba(231, 235, 238, 0.2);
+    border: 0.5px solid #696666;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
 }
 
 .inputBox{
-    height: 1.75rem/* 28px */;
-    width: 14rem/* 224px */;
+    height: 30px;
+    width:260px;
     padding-left: 0.25rem/* 4px */;
     outline: none;
     background: #FFFFFF;

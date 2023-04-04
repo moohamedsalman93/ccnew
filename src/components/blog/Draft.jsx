@@ -10,13 +10,8 @@ import ImageUpload from "./thumbnail";
 import Preview from "./Preview";
 import {ToastContainer,toast} from'react-toastify';
 
-function NewBlog() {
+function Draft() {
 
-  // //open or colse draft dropdown
-   const [isOpen, setOpen] = useState(false);
-  const handleBlogIconClick = () => {
-    setOpen(!isOpen);
-  };
 
 
   // //preview open and colse
@@ -33,23 +28,16 @@ function NewBlog() {
   const [content, setContent] = useState('');
 
 
-
-  // //draft
-  const [dtitle, setdTitle] = useState('');
-  const [dshortDesc, setdShortDesc] = useState('');
-  const [dtags, setdTags] = useState('');
-  const [dcontent, setdContent] = useState('');
-
   useEffect(() => {
     const ti = JSON.parse(localStorage.getItem("title"));
     const sh = JSON.parse(localStorage.getItem("shortDesc"));
     const ta = JSON.parse(localStorage.getItem("tags"));
     const co = JSON.parse(localStorage.getItem("content"));
-    setdTitle(ti);
-    setdShortDesc(sh);
-    setdTags(ta);
-    setdContent(co);
-  }, [dtitle,dshortDesc]);
+    setTitle(ti);
+    setShortDesc(sh);
+    setTags(ta);
+    setContent(co);
+  }, []);
 
 
 
@@ -58,11 +46,6 @@ function NewBlog() {
   function handleFileUpload(file) {
     setThumbnail(file);
   }
-  const navigate = useNavigate();
-
-  const handleDraftClick = () => {
-    navigate(`/Blog/draft`);
-  }
 
   return (
 
@@ -70,47 +53,17 @@ function NewBlog() {
       {isPre ? <Preview ptitle={title} psetTitle={setTitle} pcontent={content} setPre={setPre} />:
         (<>
           <div className='newblog-header'>
-            <div className='newblog-header-title'>Add Blog</div>
-            <div className='newblog-header-container'>
-              <>
-                <button className='newblog-header-container-button-draft'  onClick={handleBlogIconClick}>
-                  {dtitle === null ? null : <div className="notifydot"></div>}
-                  <div className='button-label'>Draft</div>
-                  {
-                    !isOpen ? (<img src={downarrow} alt="My" className='button-arrow' />) : (<img src={uparrow} alt="My" className='button-arrow' />)
-                  }
-                </button>
-                {
-                  isOpen && <div className="draftdropdown">
-                    {
-                      dtitle === null ? (
-                        <div className="draft-nodata">
-                          <img src={nodata} alt="no data" className='draft-noimg' />
-                          <div>No Draft</div>
-                        </div>) :
-                        (
-                          <div className="draftdropdowncard" onClick={handleDraftClick}>
-                            <div className="draftcardtitlecontainer">
-                              <div className="drafttitle">{dtitle}</div>
-                            </div>
-                            <div className="draftdesc">{dshortDesc}</div>
-                            <div className="draftpending">draft</div>
-                          </div>
-                        )
-                    }
-                  </div>
-                }
-              </>
+            <div className='newblog-header-title'>Draft</div>
+            
               <button className='newblog-header-container-button-preview' onClick={handlepreClick}>
                 <div className='button-label'>Preview</div>
                 <img src={eye} alt="My" className='button-eye' />
               </button>
-            </div>
+        
           </div>
           <div className="body-content">
             <div className="form-container">
-              <Form 
-              thumbnail={thumbnail} 
+              <Form thumbnail={thumbnail} 
               title={title} 
               setTitle={setTitle} 
               shortDesc={shortDesc} 
@@ -140,4 +93,4 @@ function NewBlog() {
 
 }
 
-export default NewBlog
+export default Draft;
