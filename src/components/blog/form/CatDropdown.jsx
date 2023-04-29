@@ -19,6 +19,32 @@ const CatDropdown = ({valued,setvalued}) => {
    const [options, setOptions] = useState([
    
    ]);
+   const primaryColor = 'rgba(58, 3, 46, 1)';
+   const secondaryColor = 'rgba(58, 3, 46,0.2)';
+ 
+   const colorStyles = {
+     control: (styles, { isFocused }) => ({
+       ...styles,
+       boxShadow: "none",
+       color:"black",
+       borderColor: isFocused ? primaryColor : "rgba(105, 102, 102, 1)",
+       "&:hover": {
+         borderColor: isFocused ? primaryColor : "rgba(105, 102, 102, 1)"
+       },
+     }),
+ 
+     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+       return {
+         ...styles,
+         backgroundColor: isSelected ? primaryColor : null,
+         color: isSelected ? "white" : null, // add this line
+         ":hover": {
+           backgroundColor: isFocused ? secondaryColor : null,
+ 
+         },
+       };
+     },
+   };
 
   const createTag = async (tag) => {
     try {
@@ -94,6 +120,7 @@ const CatDropdown = ({valued,setvalued}) => {
       placeholder="Select or create a tag"
       isClearable={true}
       isSearchable={true}
+      styles={colorStyles}
     />
     
   );

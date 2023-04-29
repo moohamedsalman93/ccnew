@@ -17,7 +17,7 @@ function BlogTitleBox({ title, handleChange }) {
 
  
   return (
-    <div>
+    <div className='h-[60px] w-[200px] bg-[]'>
       <input
         className="titleinput"
         type='text'

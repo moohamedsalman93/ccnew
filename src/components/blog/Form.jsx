@@ -26,15 +26,27 @@ const Form = ({ blogid, thumbnail, title, setTitle, shortDesc, setShortDesc, tag
     navigate(`/Blog/`);
   };
 
+  const clr =() => {
+    setTitle("");
+    setShortDesc("");
+    setTags("");
+    setContent("");
+  }
+
   const handleDraft = () => {
-    localStorage.setItem("title", JSON.stringify(title));
-    localStorage.setItem("shortDesc", JSON.stringify(shortDesc));
-    localStorage.setItem("tags", JSON.stringify(tags));
-    localStorage.setItem("content", JSON.stringify(content));
+    const draft = { title,shortDesc,tags,content};
+    const drafts = JSON.parse(localStorage.getItem('drafts')) || [];
+    const newDrafts = [...drafts, draft];
+    localStorage.setItem('drafts', JSON.stringify(newDrafts));
+    clr();
+    // localStorage.setItem("title", JSON.stringify(title));
+    // localStorage.setItem("shortDesc", JSON.stringify(shortDesc));
+    // localStorage.setItem("tags", JSON.stringify(tags));
+    // localStorage.setItem("content", JSON.stringify(content));
   };
 
   function handleSubmit(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     const formData = new FormData();
     formData.append('title', title);
@@ -75,6 +87,7 @@ const Form = ({ blogid, thumbnail, title, setTitle, shortDesc, setShortDesc, tag
             progress: undefined,
             theme: "colored",
           });
+          clr();
         }
         else if (response.data.status === "failed") {
           toast.warn(`${response.data.message}`, {

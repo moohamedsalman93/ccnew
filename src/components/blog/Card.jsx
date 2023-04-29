@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import '../../css/blog/Card.css';
-import formatDate from '../../utils/dateFormate';
+//import formatDate from '../../utils/dateFormate';
 import sortup from '../../assets/sortup.png';
 import sortdown from '../../assets/sortdown.png';
 import axios from 'axios';
 import user from '../../assets/user.png';
 
-  const apiConfig = require('../../Data/Api.json');
-  const api = apiConfig.api;
-  const accessToken = apiConfig.token;
+const apiConfig = require('../../Data/Api.json');
+const api = apiConfig.api;
+const accessToken = apiConfig.token;
 
 function Card({ post, onPostClick }) {
 
@@ -37,7 +37,7 @@ function Card({ post, onPostClick }) {
         <img src={user} alt={post.authorName} className='card-image' />
         <p className="card-label">salman</p>
       </div>
-      <p className="card-date">{formatDate(post.createdOn)}</p>
+      {/* <p className="card-date">{formatDate(post.createdOn)}</p> */}
     </div>
   );
 }
@@ -54,6 +54,8 @@ function CardList({ query }) {
 
   //fetch data
   const [sData, SetsData] = useState([]);
+
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
